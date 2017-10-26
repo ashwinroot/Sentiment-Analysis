@@ -13,21 +13,53 @@
             <input type="submit" class="btn btn-primary" name="my-form" value="Send">
         </form>
     </div>
-    {% if output=="Positive" %}
-        <div class="alert alert-success" role="alert">
-            <strong>Positve</strong> {{percentage}}
-            <div class="progress"> <div class="progress-bar bg-success" role="progressbar" style="width: 38%" aria-valuenow="0"  aria-valuemin="0" aria-valuemax="100"></div>  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script> $("#progressBar").css("width",<%=percentage%>); </script>
-</div>
-    </div>
-    {% endif %}
-    {% if output=="Negative" %}
-        <div class="alert alert-danger" role="alert">
-            <strong>Negative</strong> {{percentage}}
-            <div class="progress"> <div class="progress-bar bg-danger" role="progressbar" style="width: 38%" aria-valuenow={{percentage}} aria-valuemin="0" aria-valuemax="100"></div> </div>
-    </div>
-    {% endif %}
 
- {{output}}
+
+
+<div class="container">
+  <h2>Various Algorithms and their output</h2>
+  <!--<p>The .table-bordered class adds borders to a table:</p>-->
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>
+            <strong> Naives Bayes - my implementation</strong>
+            {% if my_output=="POS" %}
+            <div class="alert alert-success" role="alert">
+                    <strong>Positve</strong>
+            <!--<div class="progress"><progress class="progress-bar bg-success"  id="progBar" value="10" max="100" /></div>-->
+            </div>
+            {% endif %}
+            {% if my_output=="NEG" %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Negative</strong>
+
+            <!--<div class="progress"><progress class="progress-bar bg-success"  id="progBar" value="10" max="100" /></div>-->
+            </div>
+            {% endif %}
+        </td>
+        <td>
+            <strong> Naives Bayes - NLTK implementation </strong>
+            {% if nb_output=="positive" %}
+            <div class="alert alert-success" role="alert">
+                    <strong>Positve</strong>
+            <!--<div class="progress"><progress class="progress-bar bg-success"  id="progBar" value="10" max="100" /></div>-->
+            </div>
+            {% endif %}
+            {% if nb_output=="negative" %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Negative</strong>
+            <!--<div class="progress"><progress class="progress-bar bg-success"  id="progBar" value="10" max="100" /></div>-->
+            </div>
+            {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
 </body>
 </html>
